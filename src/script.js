@@ -37,7 +37,7 @@ const rectLight = new THREE.RectAreaLight(0x4e00ff, 2, 4, 1);
 // rectLight.position.set(1, -1.5, 1);
 scene.add(rectLight);
 
-// gui.addColor(rectLight, "color").name("Rect Light Color");
+gui.addColor(rectLight, "color").name("Rect Light Color");
 gui.add(rectLight, "width").name("Rect Light width").min(0).max(10).step(0.001);
 gui
   .add(rectLight, "height")
@@ -129,7 +129,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.x = 1;
 camera.position.y = 1;
-camera.position.z = 2;
+camera.position.z = -2;
 scene.add(camera);
 
 // Controls
@@ -144,7 +144,6 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-rectLight.color.set(new THREE.Color("red"));
 
 // window.addEventListener("mouseup", (e) => {
 //   console.log(Math.round((e.pageX / sizes.width) * 255));
